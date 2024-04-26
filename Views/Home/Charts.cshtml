@@ -91,7 +91,50 @@
             }
         });
 
+        //Chart developed by  Mani Kanta yaswanth
+        const costRangeData = ["Below $1000", "$1000 to $2500", "Above $2500"]; // Labels for the cost ranges
+        const requestCounts02 = [65, 25, 10]; // Number of requests for each range
 
+        // Create the bar chart for cost range requests
+        const ctx02 = document.getElementById('costRangeRequestsChart').getContext('2d'); // Get the context
+        const costRangeRequestsChart = new Chart(ctx02, {
+            type: 'bar', // Bar chart type
+            data: {
+                labels: costRangeData, // Chart labels
+                datasets: [{
+                    label: 'Number of Requests', // Dataset label
+                    data: requestCounts02, // Dataset data
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.2)', // Light teal for "Below $1000"
+                        'rgba(255, 206, 86, 0.2)', // Light yellow for "$1000 to $2500"
+                        'rgba(255, 99, 132, 0.2)'  // Light red for "Above $2500"
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)', // Dark teal border for "Below $1000"
+                        'rgba(255, 206, 86, 1)', // Dark yellow border for "$1000 to $2500"
+                        'rgba(255, 99, 132, 1)'  // Dark red border for "Above $2500"
+                    ],
+                    borderWidth: 1 // Border thickness
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true, // Ensure the y-axis starts at zero
+                        ticks: {
+                            stepSize: 10 // Adjust step size for better readability
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true // Display the legend
+                    }
+                },
+                responsive: true, // Enable responsive behavior
+                maintainAspectRatio: false // Maintain aspect ratio
+            }
+        });
 
 
 
