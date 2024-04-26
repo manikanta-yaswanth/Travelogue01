@@ -90,6 +90,51 @@
                 maintainAspectRatio: false // Adjust aspect ratio
             }
         });
+        //Chart created by Pranathi Cheemarla
+
+        // Data for Destination Requests Chart
+        const destinationData = ["New York", "Miami", "Los Angeles", "Paris", "Tokyo", "Other Locations"];
+        const requestCounts = [80, 75, 70, 65, 60, 50];
+
+        // Create Destination Requests Chart
+        const ctx2 = document.getElementById('destinationRequestsChart').getContext('2d');
+        const destinationRequestsChart = new Chart(ctx2, {
+            type: 'bar', // Chart type
+            data: {
+                labels: destinationData, // Chart labels
+                datasets: [{
+                    label: 'Number of Requests', // Dataset label
+                    data: requestCounts, // Dataset data
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)', // Background color
+                    borderColor: 'rgba(255, 99, 132, 1)', // Border color
+                    borderWidth: 1 // Border thickness
+                }]
+            },
+            options: {
+                animation: {
+                    duration: 2000, // Animation duration in milliseconds
+                    easing: 'easeInOutQuart', // Easing for animation
+                    onComplete: function () {
+                        console.log("Animation complete!"); // Log message on completion
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true, // Start y-axis at zero
+                        ticks: {
+                            stepSize: 10 // Step size for ticks
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true // Display the legend
+                    }
+                },
+                responsive: true, // Enable responsiveness
+                maintainAspectRatio: false // Keep aspect ratio flexible
+            }
+        });
 
         //Chart developed by  Mani Kanta yaswanth
         const costRangeData = ["Below $1000", "$1000 to $2500", "Above $2500"]; // Labels for the cost ranges
