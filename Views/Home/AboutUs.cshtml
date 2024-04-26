@@ -5,6 +5,8 @@
 <html lang="en">
 
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Our Team</title>
@@ -13,6 +15,10 @@
     <!-- Assuming your CSS file is named styles.css -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
     <style>
+        .button-container{
+            text-align:center;
+            margin-top:10px;
+        }
 
         .chart-table {
             width: 100%; /* Full table width */
@@ -50,7 +56,7 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #f0f0f0;
             background-image: url('images/Dessert.jpg');
             background-size: cover;
@@ -132,7 +138,12 @@
 </head>
 
 <body>
-
+    <!-- Move the button to the top of the page -->
+    <div class="button-container"></div>
+    <div style="text-align: center;">
+        <!-- Adjust margin for spacing -->
+        <button class="nav-link" onclick="location.href='@Url.Action("Charts", "Home")'">Charts</button>
+    </div>
     <main>
         <div class="team-container">
             <div class="team-member">
