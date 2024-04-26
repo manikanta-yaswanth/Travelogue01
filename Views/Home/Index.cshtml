@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    .main-content {
+        background-image: url('images/Dessert.jpg'); /* Path to your background image */
+        background-size: cover;
+        background-position: center;
+        height: 100vh; /* Adjust height as needed */
+        padding: 50px; /* Add padding for better visibility of content */
+        box-sizing: border-box; /* Ensure padding is included in height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .trip-container {
+        display: flex; /* Enable flexbox */
+        gap: 30px; /* Add space between the two sections */
+    }
+
+    .trip {
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8); /* Background color with transparency */
+        border-radius: 10px;
+        max-width: 350px;
+        flex: 1; /* Allow each trip section to take up equal space */
+    }
+
+        .trip img {
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 100%; /* Ensure the image fits the width of the parent container */
+        }
+
+        .trip h2 {
+            color: #333;
+            font-size: 1.5em; /* Increase font size */
+        }
+
+        .trip p {
+            color: #666;
+            font-size: 1em; /* Adjust font size */
+        }
+</style>
+<div class="main-content">
+    <!-- Main Content with Side-by-Side Layout -->
+    <div class="trip-container">
+        <!-- Solo Trips Section -->
+        <div class="trip solo-trip">
+            <h2>Backpacking/Solo Trips</h2>
+            <p>Embark on a solo adventure or join a small group of fellow travelers for an unforgettable backpacking experience.</p>
+            <img src="images/backpacking.png" alt="Solo Trip">
+        </div>
+
+        <!-- Group Trips Section -->
+        <div class="trip group-trip">
+            <h2>Group Trips</h2>
+            <p>Travel with friends, family, or other like-minded individuals on a group trip designed to maximize fun and exploration.</p>
+            <img src="images/GroupTravel.jpeg" alt="Group Trip">
+        </div>
+    </div>
+</div>
+

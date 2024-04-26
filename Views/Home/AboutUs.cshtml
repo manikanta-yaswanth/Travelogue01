@@ -1,0 +1,214 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our Team</title>
+    <!-- Inside _Layout.cshtml or a view file -->
+    <link rel="stylesheet" href="~/css/style.css" />
+    <!-- Assuming your CSS file is named styles.css -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
+    <style>
+
+        .chart-table {
+            width: 100%; /* Full table width */
+            border-collapse: collapse; /* Remove gaps between cells */
+        }
+
+        .chart-cell {
+            text-align: center; /* Center the content horizontally */
+            vertical-align: top; /* Align content at the top */
+            padding: 10px; /* Spacing around the charts */
+        }
+
+        .chart-container {
+            width: 400px;
+            height: 300px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #ccc;
+        }
+
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .team-member {
+            flex: 1 1 calc(25% - 20px); /* Adjust width as needed */
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            background-image: url('images/Dessert.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .team-member {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+            .team-member img {
+                max-width: 150px;
+                border-radius: 50%;
+                margin-bottom: 10px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .team-member h2 {
+                margin-bottom: 5px;
+            }
+
+            .team-member p {
+                margin-bottom: 10px;
+            }
+
+        #footer {
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .team-work {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .h {
+            color: rgb(95, 130, 161);
+        }
+
+        .model {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 1060px;
+            margin-bottom: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="~/images/sonu.jpeg" alt="Team Member 1">
+                <h2>Sonu Kanna</h2>
+                <p>Sonu is the driving force behind our application. With a deep understanding of both technical and operational aspects of software development, he orchestrates the team's efforts, ensuring projects are completed on time and with the highest quality. His strategic planning and problem-solving skills create a collaborative environment where innovation thrives.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="~/images/pranathi.jpeg" alt="Team Member 2">
+                <h2>Pranathi</h2>
+                <p>Pranathi is responsible for designing the form and page layouts that guide the user experience. Her commitment to intuitive design and visual harmony has resulted in a seamless and engaging application interface. Pranathi's meticulous approach and creativity have played a key role in delivering a professional and user-friendly platform.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="~/images/mani.jpeg" alt="Team Member 3">
+                <h2>Yaswanth</h2>
+                <p>Yaswanth oversaw the comprehensive testing to ensure our application's seamless operation. As the data model designer, he created a robust structure to support optimal performance and scalability. His expertise in quality assurance and attention to detail were crucial in resolving critical issues, leading to a reliable and efficient final product.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="~/images/nikhil.jpeg" alt="Team Member 4">
+                <h2>Nikhil</h2>
+                <p>Nikhil is in charge of implementing JavaScript functionality and ensuring the overall styling consistency of the application. His deep understanding of front-end technologies contributes to a smooth and responsive user experience. Nikhil's expertise in both code and design guarantees a cohesive and visually appealing interface.</p>
+            </div>
+        </div>
+        <div class="model">
+            <h1>Data Model</h1>
+            <img src="~/images/data_model.jpg" height="600px" width="800px">
+
+        </div>
+
+        </div>
+        <div>
+            <table class="chart-table">
+                <!-- Use a table to arrange charts -->
+                <tr>
+                    <td class="chart-cell">
+                        <!-- First chart cell -->
+                        <div class="chart-container">
+                            <canvas id="itineraryChart"></canvas> <!-- First chart canvas -->
+                        </div>
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+
+
+        <!-- Include the custom JavaScript file -->
+        <!-- Include the JavaScript file -->
+        <script src="~/js/charts.js"></script>
+
+        <div class="team-work">
+            <h1>Contributions</h1>
+            <div style="text-align: center; width: 100%;">
+                <p style="max-width: 650px; margin: auto;">
+                    Our team has worked diligently on various facets of the Itinerary Website. Below are some snapshots of our contributions, showcasing the diversity
+                    and depth of our work.
+                </p>
+            </div>
+            <h1 class="h">NIKHIL KACHAM</h1>
+            <img src="~/images/NIKHILSCREENSHOT.png" alt="" height="250px" width="785px">
+
+            <h1 class="h">SONU KANNA </h1>
+            <img src="~/images/SONUSCREENSHOT.png" alt="" height="250px" width="975px">
+            <h1 class="h">MANI KANTA YASWANTH JALAGADUGU</h1>
+            <img src="~/images/MANISCREENSHOT.png" alt="" height="250px" width="1020px">
+            <h1 class="h">PRANATHI CHEEMARLA</h1>
+            <img src="~/images/pranathi_work.png" alt="" height="600px" width="800px">
+
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>
