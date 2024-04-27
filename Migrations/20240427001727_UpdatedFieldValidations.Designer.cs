@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Travelogue03.Data;
 
@@ -11,9 +12,11 @@ using Travelogue03.Data;
 namespace Travelogue03.Migrations
 {
     [DbContext(typeof(Travelogue03Context))]
-    partial class Travelogue03ContextModelSnapshot : ModelSnapshot
+    [Migration("20240427001727_UpdatedFieldValidations")]
+    partial class UpdatedFieldValidations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

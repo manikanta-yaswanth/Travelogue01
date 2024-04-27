@@ -18,6 +18,11 @@ namespace Travelogue03.Controllers
         {
             _context = context;
         }
+        public IActionResult SubmittedPage()
+        {
+
+            return View();
+        }
 
         // GET: TravelDetails
         public async Task<IActionResult> Index()
@@ -153,5 +158,29 @@ namespace Travelogue03.Controllers
         {
             return _context.TravelDetails.Any(e => e.Id == id);
         }
+        // trying to clear the data from the database, once the user hit submit button
+        public async Task<IActionResult> Submit()
+        {
+            // Retrieve all travel details records from the database
+            var allTravelDetails = await _context.TravelDetails.ToListAsync();
+
+            // If there are no records, return an appropriate response
+            if (allTravelDetails == null || allTravelDetails.Count == 0)
+            {
+                return NotFound(); // Or return a different response as needed
+            }
+
+            // Remove all travel details records
+            _context.TravelDetails.RemoveRange(allTravelDetails);
+
+            // Save changes to the database
+            await _context.SaveChangesAsync();
+
+
+
+            // Redirect to a success page or any other appropriate action
+            return RedirectToAction("SubmittedPage"); // Redirect to Index or any other page
+        }
+
     }
 }
