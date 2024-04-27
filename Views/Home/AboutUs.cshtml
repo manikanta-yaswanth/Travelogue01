@@ -57,7 +57,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f0f0f0;
+            background-color: #dad1d1;
             background-image: url('images/Dessert.jpg');
             background-size: cover;
             background-position: center;
@@ -134,6 +134,20 @@
             margin-bottom: 15px;
         }
 
+        .navchart-link {
+            text-decoration: none;
+            background-color: #2c3e50;
+            color:white;/* Set the color to white */
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navchart-link:hover {
+            background-color: #3498db;
+            color: #2c3e50;
+        }
+
     </style>
 </head>
 
@@ -142,7 +156,7 @@
     <div class="button-container"></div>
     <div style="text-align: center;">
         <!-- Adjust margin for spacing -->
-        <button class="nav-link" onclick="location.href='@Url.Action("Charts", "Home")'">Charts</button>
+        <button class="navchart-link" onclick="location.href='@Url.Action("Charts", "Home")'">Our Website Charts</button>
     </div>
     <main>
         <div class="team-container">
@@ -172,25 +186,12 @@
         </div>
         <div class="model">
             <h1>Data Model</h1>
-            <img src="~/images/data_model.jpg" height="600px" width="800px">
+            <img src="~/images/data-model.jpg" height="300px" width="600px">
 
         </div>
 
         </div>
-        <div>
-            <table class="chart-table">
-                <!-- Use a table to arrange charts -->
-                <tr>
-                    <td class="chart-cell">
-                        <!-- First chart cell -->
-                        <div class="chart-container">
-                            <canvas id="itineraryChart"></canvas> <!-- First chart canvas -->
-                        </div>
-                    </td>
-
-                </tr>
-            </table>
-        </div>
+  
 
 
         <!-- Include the custom JavaScript file -->
